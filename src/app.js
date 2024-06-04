@@ -1,10 +1,3 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
   function generateRandomSentence() {
     let who = ["The dog", "My grandma", "His turtle", "My bird"];
@@ -18,16 +11,14 @@ window.onload = function() {
       "while I was praying",
     ];
 
-    let sentence =
-      chooseRandomItem(who) +
-      " " +
-      chooseRandomItem(action) +
-      " " +
-      chooseRandomItem(what) +
-      " " +
-      chooseRandomItem(when);
+    let chosenWho = chooseRandomItem(who);
+    let chosenAction = chooseRandomItem(action);
+    let chosenWhat = chooseRandomItem(what);
+    let chosenWhen = chooseRandomItem(when);
 
-    document.getElementById("excuse").textContent = sentence;
+    let sentence = `${chosenWho} ${chosenAction} ${chosenWhat} ${chosenWhen}`;
+    var excuseElement = document.getElementById("excuse");
+    excuseElement.textContent = sentence;
   }
 
   function chooseRandomItem(array) {
